@@ -79,7 +79,25 @@ public class DeviceInfoActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.upload_info:
-                GetDeviceInformation();
+//                GetDeviceInformation();
+                PhonePermission();
+
+                break;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_PHONE_CODE:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    TelephonyManager manager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+
+                    UploadInfoToDatabase(manager.getDeviceId(), manager.getSimOperatorName(), manager.getSimCountryIso());
+
+                } else {
+                    Toast.makeText(DeviceInfoActivity.this, "Permission denied", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }
@@ -94,43 +112,28 @@ public class DeviceInfoActivity extends AppCompatActivity implements View.OnClic
         DeviceRef = mDatabase.child("Device-Info");
     }
 
-    private void GetDeviceInformation() {
-        if (ActivityCompat.checkSelfPermission(this, READ_SMS) == PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(this, READ_PHONE_NUMBERS) ==
-                        PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
-                READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
-            TelephonyManager manager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
 
-
-            UploadInfoToDatabase(manager.getDeviceId(), manager.getSimOperatorName(), manager.getSimCountryIso());
-
-            return;
-        } else {
-            RequestPermission();
-        }
-    }
-
-    private void RequestPermission() {
+    private void PhonePermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requestPermissions(new String[]{READ_SMS, READ_PHONE_NUMBERS, READ_PHONE_STATE}, REQUEST_PHONE_CODE);
-        }
-    }
+            if (checkSelfPermission(READ_SMS) == PackageManager.PERMISSION_GRANTED && checkSelfPermission(READ_PHONE_NUMBERS) ==
+                    PackageManager.PERMISSION_GRANTED && checkSelfPermission(
+                    READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
 
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_PHONE_CODE:
+
                 TelephonyManager manager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) !=
-                        PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
-                        Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED &&
-                        ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                    return;
-                }
-
                 UploadInfoToDatabase(manager.getDeviceId(), manager.getSimOperatorName(), manager.getSimCountryIso());
-                break;
+
+            } else {
+                String[] permission = {READ_SMS, READ_PHONE_NUMBERS, READ_PHONE_STATE};
+                requestPermissions(permission, REQUEST_PHONE_CODE);
+            }
+        } else {
+
+            TelephonyManager manager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+            UploadInfoToDatabase(manager.getDeviceId(), manager.getSimOperatorName(), manager.getSimCountryIso());
         }
     }
+
 
     private void RetrieveDeviceInfo() {
         DeviceRef.child(userId).addValueEventListener(new ValueEventListener() {
