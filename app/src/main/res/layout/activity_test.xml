@@ -26,7 +26,6 @@
                 app:cardElevation="@dimen/_3sdp">
 
                 <LinearLayout
-                    android:id="@+id/device_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_8sdp"
@@ -59,7 +58,6 @@
                 app:cardElevation="@dimen/_3sdp">
 
                 <LinearLayout
-                    android:id="@+id/subscribe"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_8sdp"
@@ -69,7 +67,6 @@
                     <ImageView
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
-                        android:padding="@dimen/_10sdp"
                         android:src="@drawable/subscribe" />
 
                     <TextView
@@ -100,7 +97,6 @@
                 app:cardElevation="@dimen/_3sdp">
 
                 <LinearLayout
-                    android:id="@+id/feature"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_8sdp"
@@ -110,7 +106,6 @@
                     <ImageView
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
-                        android:padding="@dimen/_10sdp"
                         android:src="@drawable/features" />
 
                     <TextView
@@ -134,7 +129,6 @@
                 app:cardElevation="@dimen/_3sdp">
 
                 <LinearLayout
-                    android:id="@+id/setting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_8sdp"
@@ -144,7 +138,6 @@
                     <ImageView
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
-                        android:padding="@dimen/_10sdp"
                         android:src="@drawable/setting" />
 
                     <TextView

@@ -1,3 +1,48 @@
 <resources>
-    <string name="app_name">Anti-Theft</string>
+    <string name="app_name">Yeske Anti-theft</string>
+
+    <string name="yeske"><u>YESKE</u></string>
+    <string name="anti_theft">Anti-theft</string>
+
+    <!--    AUTHENTICATION-->
+    <string name="register">Register</string>
+    <string name="sign_in">SignIn</string>
+    <string name="f_name">First Name</string>
+    <string name="l_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="phone_no">Phone Number</string>
+    <string name="pass">Password</string>
+    <string name="confirm_pass">Confirm Password</string>
+    <string name="sign_up">SignUp</string>
+    <string name="forgot_pass"><u>forgot password?</u></string>
+    <string name="send_code">Send Code</string>
+    <string name="verify_code">Verification Code</string>
+    <string name="send_email_verify">Send verification email</string>
+    <string name="create">Create</string>
+
+
+    <!--    HOME-->
+    <string name="dashboard">Dashboard</string>
+
+    <string name="device_info">Device Info</string>
+    <string name="upload_device_info">Upload holding mobile device Info</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="feature">Features</string>
+
+    <!--    DEVICE INFO-->
+    <string name="imei">IMEI:</string>
+    <string name="op_name">Operator:</string>
+    <string name="op_code">Operator Code:</string>
+
+    <!--    SETTINGS-->
+    <string name="settings">Settings</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_pass">Change Password</string>
+    <string name="sign_out">SignOut</string>
+    <string name="title_activity_splash">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+
 </resources>

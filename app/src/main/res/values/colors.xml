@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">@color/WineRed</color>
+    <color name="colorPrimaryDark">@color/Black</color>
+    <color name="colorAccent">@color/GreyPurple</color>
+
+    <color name="Black">#000000</color>
+    <color name="White">#FFFFFF</color>
+    <color name="WineRed">#722F37</color>
+    <color name="DimPurple">#DFDFF5</color>
+    <color name="GreyBrown">#707054</color>
+    <color name="GreyPurple">#616191</color>
+    <color name="DimGrey">#E5E5E5</color>
+    <color name="NavyBlue">#000080</color>
+    <color name="Transparent">#00000000</color>
+    <color name="Charcoal">#36454F</color>
+
+    <color name="black_overlay">#66000000</color>
+
 </resources>
