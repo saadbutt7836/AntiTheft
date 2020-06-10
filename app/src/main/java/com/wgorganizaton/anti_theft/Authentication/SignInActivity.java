@@ -103,10 +103,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
                                 String message = "A verification email sent to your email Id. First verify then signIn please";
                                 Toast.makeText(SignInActivity.this, message, Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(SignInActivity.this, MainActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                finish();
-                                startActivity(intent);
+                               
                                 mAuth.signOut();
                             }
                         } else {

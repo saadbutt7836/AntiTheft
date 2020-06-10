@@ -168,7 +168,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         Map.put("profile_img", profileImg);
 //        Map.put("username", username);
         Map.put("phone_no", countryCode + phoneNo);
-        Map.put("password", password);
 
         UserRef.child(userId).updateChildren(Map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
