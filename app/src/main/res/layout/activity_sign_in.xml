@@ -15,7 +15,7 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:text="@string/sign_in"
         android:textColor="@color/Black"
-        android:textSize="@dimen/_30sdp"
+        android:textSize="@dimen/_30ssp"
         android:textStyle="bold" />
 
     <RelativeLayout
@@ -33,7 +33,7 @@
             android:text="@string/sign_up"
             android:textAllCaps="false"
             android:textColor="@color/WineRed"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="@dimen/_15ssp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -132,7 +132,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:text="@string/forgot_pass"
             android:textColor="@color/GreyBrown"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="@dimen/_15ssp"
             android:textStyle="italic|bold" />
 
         <Button

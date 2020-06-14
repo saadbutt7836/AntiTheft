@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/Charcoal"
-                android:textSize="@dimen/_17sdp"
+                android:textSize="@dimen/_17ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -58,7 +58,7 @@
                 android:layout_below="@+id/name"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:textColor="@color/GreyBrown"
-                android:textSize="@dimen/_15sdp" />
+                android:textSize="@dimen/_15ssp" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -85,21 +85,15 @@
             android:src="@drawable/email"
             android:tint="@color/GreyBrown" />
 
-        <com.google.android.material.textfield.TextInputLayout
+
+        <TextView
+            android:id="@+id/setting_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true">
-
-            <TextView
-                android:id="@+id/setting_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/DimPurple"
-                android:paddingStart="@dimen/_3sdp"
-                android:textColor="@color/Charcoal"
-                android:textSize="@dimen/_15sdp" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:backgroundTint="@color/DimPurple"
+            android:paddingStart="@dimen/_3sdp"
+            android:textColor="@color/Charcoal"
+            android:textSize="@dimen/_15ssp" />
     </LinearLayout>
 
 
@@ -122,23 +116,17 @@
             android:src="@drawable/lock"
             android:tint="@color/GreyBrown" />
 
-        <com.google.android.material.textfield.TextInputLayout
+
+        <TextView
+            android:id="@+id/change_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true">
-
-            <TextView
-                android:id="@+id/change_pass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/DimPurple"
-                android:paddingStart="@dimen/_3sdp"
-                android:text="@string/change_pass"
-                android:textColor="@color/Charcoal"
-                android:textSize="@dimen/_15sdp"
-                android:textStyle="bold" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:backgroundTint="@color/DimPurple"
+            android:paddingStart="@dimen/_3sdp"
+            android:text="@string/change_pass"
+            android:textColor="@color/Charcoal"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -154,23 +142,16 @@
             android:src="@drawable/signout"
             android:tint="@color/GreyBrown" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <TextView
+            android:id="@+id/sign_out"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true">
-
-            <TextView
-                android:id="@+id/sign_out"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/DimPurple"
-                android:paddingStart="@dimen/_3sdp"
-                android:text="@string/sign_out"
-                android:textColor="@color/Charcoal"
-                android:textSize="@dimen/_15sdp"
-                android:textStyle="bold" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:backgroundTint="@color/DimPurple"
+            android:paddingStart="@dimen/_3sdp"
+            android:text="@string/sign_out"
+            android:textColor="@color/Charcoal"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

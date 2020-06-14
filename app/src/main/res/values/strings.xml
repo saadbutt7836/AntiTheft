@@ -41,6 +41,10 @@
     <string name="change_pass">Change Password</string>
     <string name="sign_out">SignOut</string>
     <string name="title_activity_splash">FullscreenActivity</string>
+
+    <!--    DIALOG-->
+    <string name="trial_title">Free Trial End</string>
+    <string name="trial_desc">Looks like you have hit your usage limit. Upgrade to our paid plan to continue without any limits.</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 

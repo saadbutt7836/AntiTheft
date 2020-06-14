@@ -45,7 +45,7 @@
                         android:text="@string/device_info"
                         android:textAllCaps="false"
                         android:textColor="@color/Charcoal"
-                        android:textSize="@dimen/_15sdp"
+                        android:textSize="@dimen/_15ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -79,7 +79,7 @@
                         android:text="@string/subscribe"
                         android:textAllCaps="false"
                         android:textColor="@color/Charcoal"
-                        android:textSize="@dimen/_15sdp"
+                        android:textSize="@dimen/_15ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -120,7 +120,7 @@
                         android:text="@string/feature"
                         android:textAllCaps="false"
                         android:textColor="@color/Charcoal"
-                        android:textSize="@dimen/_15sdp"
+                        android:textSize="@dimen/_15ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -154,7 +154,7 @@
                         android:text="@string/settings"
                         android:textAllCaps="false"
                         android:textColor="@color/Charcoal"
-                        android:textSize="@dimen/_15sdp"
+                        android:textSize="@dimen/_15ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

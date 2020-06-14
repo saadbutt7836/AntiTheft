@@ -23,7 +23,7 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:text="@string/yeske"
         android:textColor="@color/Black"
-        android:textSize="@dimen/_25sdp"
+        android:textSize="@dimen/_25ssp"
         android:textStyle="bold" />
 
     <TextView
@@ -34,6 +34,6 @@
         android:layout_centerInParent="true"
         android:text="@string/anti_theft"
         android:textColor="@color/Black"
-        android:textSize="@dimen/_25sdp"
+        android:textSize="@dimen/_25ssp"
         android:textStyle="bold" />
 </RelativeLayout>

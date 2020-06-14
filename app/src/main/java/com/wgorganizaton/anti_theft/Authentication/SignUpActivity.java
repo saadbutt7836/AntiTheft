@@ -40,16 +40,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     EditText L_Name;
     @BindView(R.id.sign_up_email)
     EditText Email;
-    //    @BindView(R.id.username)
-//    EditText Username;
     @BindView(R.id.spinner_CountryCode)
     CountryCodePicker CountryCodePicker;
     @BindView(R.id.phone_no)
     EditText Phone_No;
-    //    @BindView(R.id.send_code)
-//    Button Send_Code;
-//    @BindView(R.id.verify_code)
-//    EditText Verify_Code;
     @BindView(R.id.sign_up_pass)
     EditText Password;
     @BindView(R.id.cnfm_pass)
@@ -63,10 +57,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             lName = null,
             email = null,
             profileImg = "https://firebasestorage.googleapis.com/v0/b/anti-theft-41edf.appspot.com/o/default_img.png?alt=media&token=db59595c-0297-43c1-945e-27f9f21e55fd",
-    //            username = null,
-    phoneNo = null,
-    //            verifyCode = null,
-    password = null,
+            phoneNo = null,
+            password = null,
             confirmPass = null,
             countryCode = null,
             userId = null;
@@ -87,7 +79,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
 
         Already_User.setOnClickListener(this);
-//        Send_Code.setOnClickListener(this);
         Create.setOnClickListener(this);
 
     }
@@ -98,9 +89,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.already_user:
                 startActivity(new Intent(this, SignInActivity.class));
                 break;
-//            case R.id.send_code:
-//                SendVerificationCode();
-//                break;
             case R.id.create:
                 GetInputsFromFields();
         }
@@ -119,10 +107,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         fName = F_Name.getText().toString().trim();
         lName = L_Name.getText().toString().trim();
         email = Email.getText().toString().trim();
-//        username = Username.getText().toString().trim();
         countryCode = CountryCodePicker.getSelectedCountryCodeWithPlus();
         phoneNo = Phone_No.getText().toString().trim();
-//        verifyCode = Verify_Code.getText().toString().trim();
         password = Password.getText().toString().trim();
         confirmPass = Confirm_Password.getText().toString().trim();
 
@@ -166,7 +152,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         Map.put("l_name", lName);
         Map.put("email", email);
         Map.put("profile_img", profileImg);
-//        Map.put("username", username);
+        Map.put("timestamp", System.currentTimeMillis());
         Map.put("phone_no", countryCode + phoneNo);
 
         UserRef.child(userId).updateChildren(Map).addOnCompleteListener(new OnCompleteListener<Void>() {

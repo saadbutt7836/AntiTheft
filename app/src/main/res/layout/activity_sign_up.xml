@@ -19,7 +19,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:text="@string/register"
             android:textColor="@color/Black"
-            android:textSize="@dimen/_30sdp"
+            android:textSize="@dimen/_30ssp"
             android:textStyle="bold" />
 
         <RelativeLayout
@@ -39,7 +39,7 @@
                 android:text="@string/sign_in"
                 android:textAllCaps="false"
                 android:textColor="@color/WineRed"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_15ssp"
                 android:textStyle="bold" />
 
             <LinearLayout

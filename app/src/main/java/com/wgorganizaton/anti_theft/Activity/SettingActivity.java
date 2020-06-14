@@ -2,6 +2,7 @@ package com.wgorganizaton.anti_theft.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -46,7 +47,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     //    VARIABLES
     private String userId;
 
-
+    //FIREBASE
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase, UserRef;
 
@@ -56,19 +57,26 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(getString(R.string.settings));
 
         ButterKnife.bind(this);
 
         FirebaseCasting();
 
-        RetrieveDeviceInfo();
+        RetrieveUserInfo();
 
 //        CLICK LISTENERS
         Profile_Img.setOnClickListener(this);
         Edit_profile.setOnClickListener(this);
         Change_Pass.setOnClickListener(this);
         SignOut.setOnClickListener(this);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        onBackPressed();
+        return true;
     }
 
     @Override
@@ -99,7 +107,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         UserRef = mDatabase.child("Users");
     }
 
-    private void RetrieveDeviceInfo() {
+    private void RetrieveUserInfo() {
         UserRef.child(userId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
