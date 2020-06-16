@@ -91,12 +91,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, SubscriptionActivity.class));
                 break;
             case R.id.feature:
-                Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "coming soon", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.setting:
                 startActivity(new Intent(this, SettingActivity.class));
                 break;
-
         }
     }
 

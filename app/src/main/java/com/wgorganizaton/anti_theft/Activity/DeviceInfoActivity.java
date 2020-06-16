@@ -3,9 +3,12 @@ package com.wgorganizaton.anti_theft.Activity;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
+import android.text.format.Formatter;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -45,6 +48,10 @@ public class DeviceInfoActivity extends AppCompatActivity implements View.OnClic
     TextView Sim_Op_Name;
     @BindView(R.id.sim_country_iso)
     TextView Sim_Country__Iso;
+    @BindView(R.id.ip_address)
+    TextView Ip_Address;
+    @BindView(R.id.mac_address)
+    TextView Mac_Address;
     @BindView(R.id.upload_info)
     Button Upload_Info;
 
@@ -53,7 +60,9 @@ public class DeviceInfoActivity extends AppCompatActivity implements View.OnClic
     private static final int REQUEST_PHONE_CODE = 100;
 
     //    VARIABLES
-    private String userId;
+    private String userId = null,
+            ip = null,
+            mac = null;
 
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase, DeviceRef;
@@ -73,6 +82,7 @@ public class DeviceInfoActivity extends AppCompatActivity implements View.OnClic
         RetrieveDeviceInfo();
 
         Upload_Info.setOnClickListener(this);
+
 
     }
 
@@ -152,10 +162,15 @@ public class DeviceInfoActivity extends AppCompatActivity implements View.OnClic
                     String imei = dataSnapshot.child("imei").getValue().toString();
                     String simOperatorName = dataSnapshot.child("op_name").getValue().toString();
                     String simCountryIso = dataSnapshot.child("op_iso").getValue().toString();
+                    String ip = dataSnapshot.child("ip_address").getValue().toString();
+                    String mac = dataSnapshot.child("mac_address").getValue().toString();
 
                     Imei_Text.setText(getString(R.string.imei) + " " + imei);
                     Sim_Op_Name.setText(getString(R.string.op_name) + " " + simOperatorName);
                     Sim_Country__Iso.setText(getString(R.string.op_code) + " " + simCountryIso);
+                    Ip_Address.setText(getString(R.string.ip_add) + ": " + ip);
+                    Mac_Address.setText(getString(R.string.mac_add) + ": " + mac);
+
 
                 } else {
                     Toast.makeText(DeviceInfoActivity.this, "Please Upload Information", Toast.LENGTH_SHORT).show();
@@ -170,11 +185,19 @@ public class DeviceInfoActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void UploadInfoToDatabase(String imei, String simOperatorName, String simCountryIso) {
+        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        WifiInfo wInfo = wifiManager.getConnectionInfo();
+
+        String ip = Formatter.formatIpAddress(wInfo.getIpAddress());
+        String mac = wInfo.getMacAddress();
+
         Map<String, Object> Map = new HashMap<>();
 
         Map.put("imei", imei);
         Map.put("op_name", simOperatorName);
         Map.put("op_iso", simCountryIso);
+        Map.put("ip_address", ip);
+        Map.put("mac_address", mac);
 
         DeviceRef.child(userId).updateChildren(Map)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
