@@ -73,7 +73,7 @@
                         <EditText
                             android:id="@+id/sign_in_email"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
                             android:backgroundTint="@color/DimPurple"
                             android:hint="@string/email"
                             android:inputType="textEmailAddress"
@@ -105,13 +105,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusable="true"
-                        app:passwordToggleEnabled="true"
-                        android:focusableInTouchMode="true">
+                        android:focusableInTouchMode="true"
+                        app:passwordToggleEnabled="true">
 
                         <EditText
                             android:id="@+id/sign_in_pass"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
                             android:backgroundTint="@color/DimPurple"
                             android:hint="@string/pass"
                             android:inputType="textPassword"

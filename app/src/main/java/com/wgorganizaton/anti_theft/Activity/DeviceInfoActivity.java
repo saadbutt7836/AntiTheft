@@ -29,7 +29,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.wgorganizaton.anti_theft.R;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -152,6 +156,21 @@ public class DeviceInfoActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
+    public static String getMobileIPAddress() {
+        try {
+            List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+            for (NetworkInterface intf : interfaces) {
+                List<InetAddress> addrs = Collections.list(intf.getInetAddresses());
+                for (InetAddress addr : addrs) {
+                    if (!addr.isLoopbackAddress()) {
+                        return addr.getHostAddress();
+                    }
+                }
+            }
+        } catch (Exception ex) {
+        } // for now eat exceptions
+        return "";
+    }
 
     private void RetrieveDeviceInfo() {
         DeviceRef.child(userId).addValueEventListener(new ValueEventListener() {
@@ -185,6 +204,7 @@ public class DeviceInfoActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void UploadInfoToDatabase(String imei, String simOperatorName, String simCountryIso) {
+        System.out.println("voice: " + getMobileIPAddress());
         WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
         WifiInfo wInfo = wifiManager.getConnectionInfo();
 

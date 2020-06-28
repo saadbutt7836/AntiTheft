@@ -74,7 +74,7 @@
                             <EditText
                                 android:id="@+id/f_name"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="@dimen/_40sdp"
                                 android:layout_gravity="center_vertical"
                                 android:backgroundTint="@color/DimPurple"
                                 android:hint="@string/f_name"
@@ -100,7 +100,7 @@
                             <EditText
                                 android:id="@+id/l_name"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="@dimen/_40sdp"
                                 android:layout_gravity="center_vertical"
                                 android:backgroundTint="@color/DimPurple"
                                 android:hint="@string/l_name"
@@ -139,7 +139,7 @@
                             <EditText
                                 android:id="@+id/sign_up_email"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="@dimen/_40sdp"
                                 android:backgroundTint="@color/DimPurple"
                                 android:hint="@string/email"
                                 android:inputType="textEmailAddress"
@@ -217,7 +217,7 @@
                             <EditText
                                 android:id="@+id/phone_no"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="@dimen/_40sdp"
                                 android:backgroundTint="@color/DimPurple"
                                 android:hint="@string/phone_no"
                                 android:inputType="number"
@@ -300,7 +300,7 @@
                             <EditText
                                 android:id="@+id/sign_up_pass"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="@dimen/_40sdp"
                                 android:backgroundTint="@color/DimPurple"
                                 android:hint="@string/pass"
                                 android:inputType="textPassword"
@@ -340,7 +340,7 @@
                             <EditText
                                 android:id="@+id/cnfm_pass"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="@dimen/_40sdp"
                                 android:backgroundTint="@color/DimPurple"
                                 android:hint="@string/confirm_pass"
                                 android:inputType="textPassword"
